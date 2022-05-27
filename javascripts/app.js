@@ -476,84 +476,84 @@ function _typeof (e) {
           e
         )
       })())()
-    new ((function () {
-      function e () {
-        _classCallCheck(this, e),
-          (this.$subscribe = $('.subscribe-form')),
-          (this.$subscribeForm = this.$subscribe.find('form')),
-          (this.$subscribeFormElements = {
-            firstName: this.$subscribeForm.find('[name="FNAME"]'),
-            number: this.$subscribeForm.find('[name="PHONE_NUMBER"]'),
-            country: this.$subscribeForm.find('[name="COUNTRY"]')
-          }),
-          (this.sakari = new i()),
-          this._bindEvents()
-      }
-      return (
-        _createClass(e, [
-          {
-            key: '_bindEvents',
-            value: function () {
-              var t = this
-              'sakari-subscribe-form' === t.$subscribeForm.attr('id') &&
-                (t.$subscribeForm.on('submit', function (e) {
-                  e.preventDefault(), t._subscribeContact()
-                }),
-                this.$subscribeFormElements.number.on(
-                  'keypress',
-                  this._formatPhoneNumber.bind(this)
-                ))
-            }
-          },
-          {
-            key: '_formatPhoneNumber',
-            value: function () {
-              var e = new libphonenumber.parsePhoneNumberFromString(
-                this.$subscribeFormElements.number.val(),
-                this.$subscribeFormElements.country.val()
-              )
-              e &&
-                e.number &&
-                this.$subscribeFormElements.number.val(
-                  new libphonenumber.AsYouType().input(e.number)
-                )
-            }
-          },
-          {
-            key: '_validateForm',
-            value: function () {
-              return 0 === this.$subscribeFormElements.firstName.val().length
-                ? ($('#ske-error-response').html('Please enter a valid name'),
-                  !1)
-                : !(
-                    this.$subscribeFormElements.number.val().length < 10 &&
-                    ($('#ske-error-response').html(
-                      'Please enter a valid phone number'
-                    ),
-                    1)
-                  )
-            }
-          },
-          {
-            key: '_subscribeContact',
-            value: function () {
-              if (
-                ($('#ske-error-response').html(''),
-                $('#ske-success-response').html(''),
-                this._validateForm())
-              ) {
-                var e = {
-                  firstName: this.$subscribeFormElements.firstName.val(),
-                  number: this.$subscribeFormElements.number.val()
-                }
-                this.sakari._addContact(e, this.$subscribeFormElements)
-              }
-            }
-          }
-        ]),
-        e
-      )
-    })())(),
+    // new ((function () {
+    //   function e () {
+    //     _classCallCheck(this, e),
+    //       (this.$subscribe = $('.subscribe-form')),
+    //       (this.$subscribeForm = this.$subscribe.find('form')),
+    //       (this.$subscribeFormElements = {
+    //         firstName: this.$subscribeForm.find('[name="FNAME"]'),
+    //         number: this.$subscribeForm.find('[name="PHONE_NUMBER"]'),
+    //         country: this.$subscribeForm.find('[name="COUNTRY"]')
+    //       }),
+    //       (this.sakari = new i()),
+    //       this._bindEvents()
+    //   }
+    //   return (
+    //     _createClass(e, [
+    //       {
+    //         key: '_bindEvents',
+    //         value: function () {
+    //           var t = this
+    //           'sakari-subscribe-form' === t.$subscribeForm.attr('id') &&
+    //             (t.$subscribeForm.on('submit', function (e) {
+    //               e.preventDefault(), t._subscribeContact()
+    //             }),
+    //             this.$subscribeFormElements.number.on(
+    //               'keypress',
+    //               this._formatPhoneNumber.bind(this)
+    //             ))
+    //         }
+    //       },
+    //       {
+    //         key: '_formatPhoneNumber',
+    //         value: function () {
+    //           var e = new libphonenumber.parsePhoneNumberFromString(
+    //             this.$subscribeFormElements.number.val(),
+    //             this.$subscribeFormElements.country.val()
+    //           )
+    //           e &&
+    //             e.number &&
+    //             this.$subscribeFormElements.number.val(
+    //               new libphonenumber.AsYouType().input(e.number)
+    //             )
+    //         }
+    //       },
+    //       {
+    //         key: '_validateForm',
+    //         value: function () {
+    //           return 0 === this.$subscribeFormElements.firstName.val().length
+    //             ? ($('#ske-error-response').html('Please enter a valid name'),
+    //               !1)
+    //             : !(
+    //                 this.$subscribeFormElements.number.val().length < 10 &&
+    //                 ($('#ske-error-response').html(
+    //                   'Please enter a valid phone number'
+    //                 ),
+    //                 1)
+    //               )
+    //         }
+    //       },
+    //       {
+    //         key: '_subscribeContact',
+    //         value: function () {
+    //           if (
+    //             ($('#ske-error-response').html(''),
+    //             $('#ske-success-response').html(''),
+    //             this._validateForm())
+    //           ) {
+    //             var e = {
+    //               firstName: this.$subscribeFormElements.firstName.val(),
+    //               number: this.$subscribeFormElements.number.val()
+    //             }
+    //             this.sakari._addContact(e, this.$subscribeFormElements)
+    //           }
+    //         }
+    //       }
+    //     ]),
+    //     e
+    //   )
+    // })())(),
       new ((function () {
         function e () {
           _classCallCheck(this, e),
